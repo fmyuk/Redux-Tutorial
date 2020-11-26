@@ -1,20 +1,24 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
 
-import App from "./App";
-import { Otameshi } from "./Otameshi";
+import React from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
+
+import { Layout } from './components/Layout';
+import { App } from './components/App';
+import { GoogleBooks } from './components/GoogleBooks';
 
 export const Path = {
-  app: "./app",
-  otameshi: "./otameshi"
+  app: '/',
+  googleBooks: '/google_books',
 };
 
 const routes = (
-  <Switch>
-    <Route exact path={Path.app} component={App} />
-    <Route exact path={Path.otameshi} component={Otameshi} />
-    <Redirect to={Path.app} />
-  </Switch>
+  <Layout>
+    <Switch>
+      <Route exact path={Path.app} component={App} />
+      <Route exact path={Path.googleBooks} component={GoogleBooks} />
+      <Redirect to={Path.app} />
+    </Switch>
+  </Layout>
 );
 
 export default routes;
