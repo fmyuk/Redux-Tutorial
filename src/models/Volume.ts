@@ -1,7 +1,7 @@
 import { List, Record } from "immutable";
 import dayjs, { Dayjs } from 'dayjs';
 
-import { JSObject } from 'types/Common';
+import { JSObject } from '../types/Common';
 
 export class ImageLinks extends Record<{
   smallThumbnail: string;
